@@ -12,6 +12,18 @@ model.configuration
     style_content_asset_name: "component-example.css.sass"
 
 model.publicMethods
+  # prefixes SASS content with the variables generated from
+  # the color palette, and other settings, in case our compiler
+  # environment doesn't have access to our variable declarations
+  compilationPayload: (value, extension)->
+    return value if StyleBuilder.config.prefixStyleContentWithVariables? is true
+
+    colors = SBApp.collectionManager.get("colors")
+
+    payload = if extension.match(/css/i)
+      "#{ colors.generateSassFileContents() }\n\n#{ value }"
+    else
+      value
 
   markupContent: ()->
     content = @get("markup_content")
