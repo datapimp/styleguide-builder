@@ -16,8 +16,20 @@ page.configuration
   events:
     "click .add-new" : "toggleForm"
     "click .submit-button" : "submitColorForm"
+    "click .export-variables": "exportVariables"
 
 page.privateMethods
+  exportVariables: (e)->
+    @$('.status-area').removeClass('hide')
+
+    for delay in [0..20]
+      setTimeout ()=>
+        @$('.status-area .bar').css('width': "#{ delay * 5 }%")
+      , delay * 20
+
+    @collection.exportToVariables ()=>
+      @$('.status-area').addClass('hide')
+
   toggleForm: ()->
     @$('.add-new-color-form').toggleClass('hide')
 

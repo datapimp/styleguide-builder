@@ -34,16 +34,23 @@ form.hide.add-new-color-form
       .btn.btn-primary.submit-button
         | Add
 
-div.list-container data-region="list"
+div.list-container data-region="list" style="margin-bottom: 15px"
 
 .well.toolbar
-  .pull-right
-    .btn.btn-success.add-new
-      i.icon.icon-white.icon-plus-sign
-      | &nbsp; Add Color
-    .btn.btn-primary
-      i.icon.icon-chevron-right.icon-white
-      | &nbsp; Export Variables
+  .row-fluid
+    .span3.offset3
+      .status-area.hide
+        .progress.progress-striped.active
+          .bar style="width:0%"
 
-  .clearfix
+    .span6
+      .pull-right
+        .btn.btn-primary.export-variables
+          i.icon.icon-chevron-right.icon-white
+          | &nbsp; Export Variables
+
+        | &nbsp;
+        .btn.btn-success.add-new
+          i.icon.icon-white.icon-plus-sign
+          | &nbsp; Add Color
 

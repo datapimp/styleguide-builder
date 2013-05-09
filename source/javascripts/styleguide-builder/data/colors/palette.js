@@ -1,0 +1,1 @@
+StyleBuilder.collections.Colors.defaults = [{"name":"Main","value":"#000000","variable":"$main"},{"name":"Alternate","value":"#35ab86","variable":"$alternate"},{"name":"Boom","value":"#9a3b3b","variable":"$boom"}]
