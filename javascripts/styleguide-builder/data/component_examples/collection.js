@@ -1,0 +1,1 @@
+(function(){var e;e=StyleBuilder.register("StyleBuilder.collections.ComponentExamples"),e["extends"]("StyleBuilder.Collection"),e.defines({model:StyleBuilder.models.ComponentExample,fetch:function(){var e;return e=StyleBuilder.collections.ComponentExamples.testData,this.reset(e)}})}).call(this);

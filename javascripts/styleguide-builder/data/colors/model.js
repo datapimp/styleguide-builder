@@ -1,0 +1,1 @@
+(function(){var e;e=StyleBuilder.register("StyleBuilder.models.Color"),e["extends"]("StyleBuilder.Model"),e.defines({defaults:{name:"Color Name",value:"#e3e3e3",variable:"$colorName"}})}).call(this);

@@ -1,0 +1,70 @@
+(function() {
+  this.JST || (this.JST = {});
+  this.JST["styleguide-builder/templates/pages/home"] = (function() {
+  
+    this.Skim = {
+      access: function(name) {
+        var value;
+        value = this[name];
+        if (typeof value === "function") {
+          value = value.call(this);
+        }
+        if (value === true) {
+          return [this];
+        }
+        if (value === false || !(value != null)) {
+          return false;
+        }
+        if (Object.prototype.toString.call(value) !== "[object Array]") {
+          return [value];
+        }
+        if (value.length === 0) {
+          return false;
+        }
+        return value;
+      },
+      withContext: function(context, block) {
+        var create;
+        create = function(o) {
+          var F;
+          F = function() {};
+          F.prototype = o;
+          return new F;
+        };
+        context = create(context);
+        context.safe || (context.safe = this.safe || function(value) {
+          var result;
+          if (value != null ? value.skimSafe : void 0) {
+            return value;
+          }
+          result = new String(value != null ? value : '');
+          result.skimSafe = true;
+          return result;
+        });
+        context.escape || (context.escape = this.escape || function(string) {
+          if (string == null) {
+            return '';
+          }
+          if (string.skimSafe) {
+            return string;
+          }
+          return this.safe(('' + string).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g, '&#47;'));
+        });
+        return block.call(context);
+      }
+    };
+  
+    return function(context) {
+      if (context == null) {
+        context = {};
+      }
+      return Skim.withContext.call({}, context, function() {
+        var _buf;
+        _buf = [];
+        _buf.push("<div class=\"row-fluid\"><div class=\"span12\"><h1>Welcome to the StyleBuilder Application</h1><p>A style guide is meant to showcase the typography, color, spacing, and other visual conventions for your site. In addition to this, common UI elements such as containers, tables, form controls, grid settings, and many other components along with the proper markup and class conventions needed to properly display them on the page can be displayed.</p><p>Rather than maintaining a static document, this application allows you to use your production stylesheets and develop best coding practices directly in the browser, so you can ensure that the stylesheets in your project best represent the intentions of your visual designers.</p></div></div><div class=\"row-fluid well\"><div class=\"span12\"><ol class=\"steps\"><li><a class=\"link\" href=\"#typography\">Typography</a><p>Define the typography preferences for your site. Define different types of headings, sub headings, paragraphs, etc</p></li><li><a class=\"link\" href=\"#colors\">Color Palette</a><p>Define the selection of colors which make up the main color palette for your site.  These values will be available throughout your stylesheets as SASS variables</p></li><li><a class=\"link\" href=\"#components\">Component Examples</a><p>Show example components such as containers, forms, tables, navigation menus, etc. Allows you to show example markup and visually see the effect of the various treatment CSS classes you define in your stylesheets.</p></li></ol></div></div>");
+        return _buf.join('');
+      });
+    };
+  
+  }).call(this);;
+}).call(this);

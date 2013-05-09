@@ -1,0 +1,1 @@
+(function(){var e;e=StyleBuilder.register("StyleBuilder.pages.Home"),e["extends"]("StyleBuilder.Page"),e.defines({template:"pages/home",index:function(){return!0}})}).call(this);
