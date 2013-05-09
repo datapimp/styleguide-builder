@@ -1,0 +1,15 @@
+.row-fluid
+  .span3.examples-list-wrapper
+    h4
+      | Examples
+      a href="#"
+        small (Back)
+
+    .well.examples-list-container data-region="list"
+
+    .btn.btn-success.btn-small.add-new-example
+      i.icon.icon-plus-sign.icon-white
+      | &nbsp; Create
+
+  .span9
+    div data-region="display"

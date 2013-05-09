@@ -1,0 +1,30 @@
+.example-display-layout
+  .state data-state="no-example-selected"
+    h3 Component Examples
+    p
+      | Here we display commonly used UI components, containers, etc with
+      | all of the different variations and show what can be achieved when
+      | simply adding a certain css class.
+    p
+      | We will show a live example of the component, with the markup needed
+      | to render the component, and any relevant style declarations that
+      | are needed to achieve the visual effect.
+
+  .state data-state="example-selected"
+    h3.title
+    .row-fluid
+      .span12
+        p.description
+
+    .preview-area.row-fluid
+      .span12
+        #preview-canvas
+
+    .code-container.row-fluid
+      .span6
+        h5 Markup
+        .markup data-region="markup_content"
+      .span6
+        h5 Style
+        .style data-region="style_content"
+
