@@ -4,5 +4,5 @@ collection.extends                  "StyleBuilder.Collection"
 collection.defines
   model: StyleBuilder.models.ComponentExample
   fetch: ()->
-    models = StyleBuilderBootstrap.component_examples
+    models = StyleBuilder.collections.ComponentExamples.testData
     @reset(models)

@@ -35,7 +35,7 @@ view.privateMethods
     # that will compile skim templates and sass files on demand
     $.ajax
       type: "POST"
-      url: "http://localhost:9295/source"
+      url: StyleBuilder.config.asset_compilation_url
       data: JSON.stringify
         name: name
         extension: rest.join(".")
