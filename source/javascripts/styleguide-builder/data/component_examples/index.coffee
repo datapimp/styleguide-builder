@@ -15,7 +15,7 @@ elegant_card_style = """// Edit this using SASS
     font-weight: bold
     font-size: 24px
 
-#preview-canvas[data-active-example='elegant-card']
+.preview-canvas[data-active-example='elegant-card']
   background-color: beige
   padding: 20px
 """

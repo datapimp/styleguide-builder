@@ -31,12 +31,30 @@ page.privateMethods
     @collection.add()
 
   onComponentSelection: (componentExample)->
-    display = @getExampleDisplay()
-    display.loadExample(componentExample)
+    SBApp.router.navigate("#components/#{ componentExample.id }", true)
+
+page.privateMethods
+  afterInitialize: ()->
+    @collection.on "reset", @renderAllPreviews, @
+    @collection.on "change", @renderAllPreviews, @
 
 page.publicMethods
   show: (selected)->
+    componentExample = @collection.get(selected)
+    display = @getExampleDisplay()
+    display.loadExample(componentExample)
 
   index: ()->
+    @getExampleDisplay().setEmptyState("on")
+    @renderAllPreviews()
+
+  renderAllPreviews: ()->
+    container = @$('.all-preview-container').empty()
+
+    for example in @collection.models
+      container.append "<h4>#{ example.get('name') }</h4><div class='preview-canvas' data-active-example='#{ example.id }' />"
+      wrapper = @$("[data-active-example='#{ example.id }']")
+      wrapper.html Luca.template("#{ example.id }")
+
 
 page.register()
