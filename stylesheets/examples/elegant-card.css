@@ -1,1 +1,1 @@
-.card.elegant{border-radius:3px;box-shadow:0 0 6px rbga(0,0,0,0.3);background-color:white}
+.card.elegant{background-color:white;padding:20px 0 40px 10px;border-radius:3px;box-shadow:0 0 6px rgba(0,0,0,0.3);margin:10px 0}.card.elegant p{line-height:32px}.card.elegant header{font-weight:700;font-size:24px}#preview-canvas[data-active-example='elegant-card']{background-color:beige;padding:20px}

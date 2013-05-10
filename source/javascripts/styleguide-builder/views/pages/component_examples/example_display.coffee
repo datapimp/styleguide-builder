@@ -77,6 +77,8 @@ view.publicMethods
     @$('h3.title').html @example.read('name')
     @$('p.description').html @example.read('description')
 
+    @previewCanvas().attr('data-active-example', @example.id)
+
     @displayMarkupExample()
     @displayStyleExample()
     @renderPreviewContent()
