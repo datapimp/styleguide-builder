@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/datapimp/code_sync.git
-  revision: ee61571ef697118a43d8a69c268dec9dc7bac2f4
+  revision: f93f3d8d5e68f55ae7bae0e536d5ed30630500e8
   specs:
-    code_sync (0.5.0)
+    code_sync (0.5.1)
       faye
       listen
       rb-fsevent (~> 0.9)

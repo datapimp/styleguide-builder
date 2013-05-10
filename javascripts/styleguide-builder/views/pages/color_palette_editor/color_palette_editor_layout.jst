@@ -1,0 +1,68 @@
+(function() { this.JST || (this.JST = {}); this.JST["styleguide-builder/views/pages/color_palette_editor/color_palette_editor_layout"] = (function() {
+  
+    this.Skim = {
+      access: function(name) {
+        var value;
+        value = this[name];
+        if (typeof value === "function") {
+          value = value.call(this);
+        }
+        if (value === true) {
+          return [this];
+        }
+        if (value === false || !(value != null)) {
+          return false;
+        }
+        if (Object.prototype.toString.call(value) !== "[object Array]") {
+          return [value];
+        }
+        if (value.length === 0) {
+          return false;
+        }
+        return value;
+      },
+      withContext: function(context, block) {
+        var create;
+        create = function(o) {
+          var F;
+          F = function() {};
+          F.prototype = o;
+          return new F;
+        };
+        context = create(context);
+        context.safe || (context.safe = this.safe || function(value) {
+          var result;
+          if (value != null ? value.skimSafe : void 0) {
+            return value;
+          }
+          result = new String(value != null ? value : '');
+          result.skimSafe = true;
+          return result;
+        });
+        context.escape || (context.escape = this.escape || function(string) {
+          if (string == null) {
+            return '';
+          }
+          if (string.skimSafe) {
+            return string;
+          }
+          return this.safe(('' + string).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g, '&#47;'));
+        });
+        return block.call(context);
+      }
+    };
+  
+    return function(context) {
+      if (context == null) {
+        context = {};
+      }
+      return Skim.withContext.call({}, context, function() {
+        var _buf;
+        _buf = [];
+        _buf.push("<div class=\"row-fluid\"><div class=\"span12\"><h3>Color Palette&nbsp;<a class=\"link\" href=\"#\"><small>Back</small></a></h3></div></div><form class=\"hide add-new-color-form\"><h5>Add New Color</h5><div class=\"row-fluid\"><div class=\"span4\"><div class=\"control-group required\"><label class=\"control-label\">Name</label><div class=\"controls\"><input name=\"name\" type=\"text\" /></div></div></div><div class=\"span4\"><div class=\"control-group\"><label class=\"control-label\">Variable</label><div class=\"controls\"><input name=\"variable\" type=\"text\" /></div></div></div><div class=\"span4\"><div class=\"control-group\"><label class=\"control-label\">Color</label><div class=\"controls\"><input class=\"color-picker-input\" name=\"value\" type=\"text\" /></div></div></div></div><div class=\"form-actions\"><div class=\"pull-right\"><div class=\"btn add-new\">Cancel</div><div class=\"btn btn-primary submit-button\">Add</div></div></div></form><div class=\"list-container\" data-region=\"list\" style=\"margin-bottom: 15px\"></div><div class=\"well toolbar\"><div class=\"row-fluid\"><div class=\"span3 offset3\"><div class=\"status-area hide\"><div class=\"progress progress-striped active\"><div class=\"bar\" style=\"width:0%\"></div></div></div></div><div class=\"span6\"><div class=\"pull-right\"><div class=\"btn btn-primary export-variables\"><i class=\"icon icon-chevron-right icon-white\"></i>&nbsp; Export Variables</div>&nbsp;<div class=\"btn btn-success add-new\"><i class=\"icon icon-white icon-plus-sign\"></i>&nbsp; Add Color</div></div></div></div></div>");
+        return _buf.join('');
+      });
+    };
+  
+  }).call(this);;
+}).call(this);

@@ -1,0 +1,68 @@
+(function() { this.JST || (this.JST = {}); this.JST["examples/elegant-card"] = (function() {
+  
+    this.Skim = {
+      access: function(name) {
+        var value;
+        value = this[name];
+        if (typeof value === "function") {
+          value = value.call(this);
+        }
+        if (value === true) {
+          return [this];
+        }
+        if (value === false || !(value != null)) {
+          return false;
+        }
+        if (Object.prototype.toString.call(value) !== "[object Array]") {
+          return [value];
+        }
+        if (value.length === 0) {
+          return false;
+        }
+        return value;
+      },
+      withContext: function(context, block) {
+        var create;
+        create = function(o) {
+          var F;
+          F = function() {};
+          F.prototype = o;
+          return new F;
+        };
+        context = create(context);
+        context.safe || (context.safe = this.safe || function(value) {
+          var result;
+          if (value != null ? value.skimSafe : void 0) {
+            return value;
+          }
+          result = new String(value != null ? value : '');
+          result.skimSafe = true;
+          return result;
+        });
+        context.escape || (context.escape = this.escape || function(string) {
+          if (string == null) {
+            return '';
+          }
+          if (string.skimSafe) {
+            return string;
+          }
+          return this.safe(('' + string).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g, '&#47;'));
+        });
+        return block.call(context);
+      }
+    };
+  
+    return function(context) {
+      if (context == null) {
+        context = {};
+      }
+      return Skim.withContext.call({}, context, function() {
+        var _buf;
+        _buf = [];
+        _buf.push("<div class=\"card elegant\"><h4>Example Content inside of an Elegant Card.</h4><p>Go ahead and edit the content of the markup code or the stylesheet in the editors below.</p><p>Be amazed as it updates before your eyes.</p></div>");
+        return _buf.join('');
+      });
+    };
+  
+  }).call(this);;
+}).call(this);

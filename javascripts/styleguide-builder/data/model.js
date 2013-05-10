@@ -1,0 +1,1 @@
+(function(){var e;e=StyleBuilder.register("StyleBuilder.Model"),e["extends"]("Luca.Model"),e.register()}).call(this);

@@ -12,6 +12,9 @@ $ ->
 
   SBApp.boot()
 
-  CodeSync.util.loadStylesheet("/stylesheets/code_sync.css")
+  if StyleBuilder.running_locally is true
+    SBApp.codeSync = new CodeSync.Client()
 
-  SBApp.codeSync = new CodeSync.Client()
+  CodeSync.AssetEditor?.setHotKey("ctrl+j")
+  CodeSync.AssetEditor.toggleEditor()
+
