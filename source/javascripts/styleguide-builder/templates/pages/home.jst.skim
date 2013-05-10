@@ -16,11 +16,11 @@
 .row-fluid.well
   .span12
     ol.steps
-      li
-        a.link href="#typography"
-          | Typography
-        p
-          | Define the typography preferences for your site. Define different types of headings, sub headings, paragraphs, etc
+      / li
+      /   a.link href="#typography"
+      /     | Typography
+      /   p
+      /     | Define the typography preferences for your site. Define different types of headings, sub headings, paragraphs, etc
       li
         a.link href="#colors"
           | Color Palette
@@ -33,3 +33,15 @@
         p
           | Show example components such as containers, forms, tables, navigation menus, etc.
           |  Allows you to show example markup and visually see the effect of the various treatment CSS classes you define in your stylesheets.
+
+.row-fluid
+  p
+    | This app is powered by
+    a href="http://datapimp.github.io/luca"
+      |  Luca
+    |   and
+    a href="http://datapimp.github.io/code_sync"
+      |  Code Sync
+    |. Written by your boy
+    a href="https://github.com/datapimp"
+      |  Datapimp
