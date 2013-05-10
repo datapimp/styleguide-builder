@@ -14,6 +14,9 @@ $ ->
 
   if StyleBuilder.running_locally is true
     SBApp.codeSync = new CodeSync.Client()
+  else
+    CodeSync.set "assetCompilationEndpoint", "http://infinite-beyond-8679.herokuapp.com/code-sync/source"
+    CodeSync.set "serverInfoEndpoint", "http://infinite-beyond-8679.herokuapp.com/code-sync/info"
 
   CodeSync.AssetEditor?.setHotKey("ctrl+j")
   CodeSync.AssetEditor?.toggleEditor?()
