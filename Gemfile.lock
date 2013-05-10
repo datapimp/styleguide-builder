@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/datapimp/code_sync.git
-  revision: 095d0c8dcd74fc7b1848d8a8429d70dca758f493
+  revision: ea8dc17027bd58d92099fba65538f9bc48a73ae1
   specs:
     code_sync (0.5.1)
       faye
