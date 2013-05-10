@@ -16,5 +16,5 @@ $ ->
     SBApp.codeSync = new CodeSync.Client()
 
   CodeSync.AssetEditor?.setHotKey("ctrl+j")
-  CodeSync.AssetEditor.toggleEditor()
+  CodeSync.AssetEditor?.toggleEditor?()
 
