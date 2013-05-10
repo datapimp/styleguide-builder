@@ -3,5 +3,5 @@ view.extends                    "Luca.components.GridLayoutView"
 
 view.defines
   collection: "colors"
-  itemsPerRow: 4
+  itemsPerRow: 2
   itemTemplate: "color_display"

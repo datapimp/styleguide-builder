@@ -20,11 +20,12 @@
       .span12
         #preview-canvas
 
-    .code-container.row-fluid
-      .span6
-        h5 Markup
-        .markup data-region="markup_content"
-      .span6
-        h5 Style
-        .style data-region="style_content"
-
+    .code-container
+      .row-fluid
+        .span12
+          h5 Markup
+          .markup data-region="markup_content"
+      .row-fluid
+        .span12
+          h5 Style
+          .style data-region="style_content"

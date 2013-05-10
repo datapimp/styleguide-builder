@@ -30,6 +30,8 @@ view.privateMethods
 
     [name, rest...] = @assetName().split('.')
 
+    extension = rest.join(".")
+
     # This currently depends on code sync running
     # eventually I need to figure out a suitable backend
     # that will compile skim templates and sass files on demand
@@ -38,8 +40,8 @@ view.privateMethods
       url: StyleBuilder.config.asset_compilation_url
       data: JSON.stringify
         name: name
-        extension: rest.join(".")
-        contents: @getValue()
+        extension: extension
+        contents: @example.compilationPayload(@getValue(), extension)
       success: (response)=>
         if response?.compiled
           @trigger "example:recompiled", response.compiled, @example
@@ -57,6 +59,6 @@ view.publicMethods
     @codeMirrorInstance.setValue(value)
 
   getValue: ()->
-    @codeMirrorInstance.getValue()
+    editorContents = @codeMirrorInstance.getValue()
 
 view.register()

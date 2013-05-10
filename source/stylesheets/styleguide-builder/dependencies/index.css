@@ -1,8 +1,7 @@
 /*
  *= require ./bootstrap.min.css
  *= require ./bootstrap-responsive.min.css
- *= require ./codemirror.css
- *= require ./codemirror-lesserdark.css
  *= require ./luca
  *= require ./spectrum.css
+ #= require code_sync/editor/codemirror
 */
