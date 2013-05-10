@@ -37,7 +37,7 @@ view.privateMethods
     # that will compile skim templates and sass files on demand
     $.ajax
       type: "POST"
-      url: StyleBuilder.config.asset_compilation_url
+      url: CodeSync.get("assetCompilationEndpoint")
       data: JSON.stringify
         name: name
         extension: extension
