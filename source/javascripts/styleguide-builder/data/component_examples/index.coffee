@@ -2,13 +2,22 @@
 #= require ./collection
 #= require_self
 
-elegant_card_style = """
-// Name: Elegant Card
-// Description: Use The Elegant Card Container however you want son.
-.card.elegant\n
-  border-radius: 3px\n
-  box-shadow: 0 0 6px rbga(0,0,0,0.3)\n
-  background-color: #fff\n
+elegant_card_style = """// Edit this using SASS
+.card.elegant
+  background-color: #fff
+  padding: 20px 0px 40px 10px
+  border-radius: 3px
+  box-shadow: 0 0 6px rgba(0,0,0,0.3)
+  margin: 10px 0px
+  p
+    line-height: 32px
+  header
+    font-weight: bold
+    font-size: 24px
+
+#preview-canvas[data-active-example='elegant-card']
+  background-color: beige
+  padding: 20px
 """
 
 elegant_card_markup = """
@@ -22,15 +31,17 @@ elegant_card_markup = """
     .card.elegant
       header
         | Use It However
+      p you can make whatever
   .span4
     .card.elegant
       header
         | Use It However
+      p it is all up to you baby.
   .span4
     .card.elegant
       header
         | Use It However
-
+      p show off your style chops
 """
 
 StyleBuilder.collections.ComponentExamples.testData = [
