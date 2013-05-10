@@ -1,1 +1,0 @@
-(function(){var e;e=StyleBuilder.register("StyleBuilder.views.ColorsList"),e["extends"]("Luca.components.GridLayoutView"),e.defines({collection:"colors",itemsPerRow:4,itemTemplate:"color_display"})}).call(this);
