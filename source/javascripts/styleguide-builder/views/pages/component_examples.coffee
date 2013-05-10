@@ -52,7 +52,7 @@ page.publicMethods
     container = @$('.all-preview-container').empty()
 
     for example in @collection.models
-      container.append "<h4>#{ example.get('name') }</h4><div class='preview-canvas' data-active-example='#{ example.id }' />"
+      container.append "<h4>#{ example.get('name') }<small><a href='#components/#{example.id}'>&nbsp;Edit</a></small></h4><div class='preview-canvas' data-active-example='#{ example.id }' />"
       wrapper = @$("[data-active-example='#{ example.id }']")
       wrapper.html Luca.template("#{ example.id }")
 
