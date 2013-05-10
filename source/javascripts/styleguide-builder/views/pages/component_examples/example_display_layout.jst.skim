@@ -10,6 +10,8 @@
       | to render the component, and any relevant style declarations that
       | are needed to achieve the visual effect.
 
+    .all-preview-container
+
   .state data-state="example-selected"
     h3.title
     .row-fluid
@@ -18,7 +20,7 @@
 
     .preview-area.row-fluid
       .span12
-        #preview-canvas
+        #main-preview-canvas.preview-canvas
 
     .code-container
       .row-fluid

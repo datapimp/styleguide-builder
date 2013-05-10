@@ -21,3 +21,7 @@ $ ->
   CodeSync.AssetEditor?.setHotKey("ctrl+j")
   CodeSync.AssetEditor?.toggleEditor?()
 
+  _.delay ()->
+    CodeSync.AssetEditor?.toggleEditor?()
+  , 2500
+

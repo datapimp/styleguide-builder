@@ -51,7 +51,7 @@ view.privateMethods
       @$("[data-state='no-example-selected']").hide()
 
   previewCanvas: ()->
-    @$('#preview-canvas')
+    @$('#main-preview-canvas')
 
   displayStyleExample: ()->
     @getStyleContent().loadExample(@example)
